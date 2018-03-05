@@ -1,0 +1,34 @@
+//C++
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,i;
+    cin>>t;
+    while(t--)
+    {
+        string str;
+        cin>>str;
+        int s = 0;
+        for(i=0 ; i< str.length()/2 ; i++)
+        {
+              s += abs(str[i] - str[str.length()-i-1]);
+        }
+        cout<<s<<endl;
+    }
+    return 0;
+}
+
+
+//Python 2
+
+t = input()
+assert t<=10 and t>=1
+for _ in range(t):
+    s = list(raw_input())
+    assert len(s) >=1 and len(s)<= 10000
+    su = 0
+    for i in range(0,len(s)/2):
+        su+= abs(ord(s[i]) - ord(s[-1-i]))
+    print su
